@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-text="message"></h1>
+        <p>Whay is your name?</p>
+        <input type="text" v-model="name">
+        <p>Hello {{ name }}! How are you?</p>
+        <input type="checkbox" v-model="display" id="options"> <label for="options">Show options: {{ display }} </label>
+        <div v-show="display" v-html="list"></div>
+        <p v-if="display">I`am ok!</p>
+        <p v-else>Amazing!!!</p>
+        
+    </div>
+    
+
+
+
+
+
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
