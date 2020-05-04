@@ -55,3 +55,19 @@ props: ['taskname'],
 ```
 
 - значения _title_ из _data_ надо передавать в свой тэг как  ``v-bind:booktitle='title'``, предварительно указав его в ``props: ['booktitle']`` и тогда в _temlate_ можно использовать ``{{ booktitle }}``
+
+## Lesson 6 — Анимации
+
+- анимуруемую область надо обернуть в тэг *transition* и указать ему название аттрибута ``name='fade'`` для которого будет описана анамация
+- name тэга *transition* используется как приставка для классов в которых описывается анимация (см. [документацию](https://ru.vuejs.org/v2/guide/transitions.html) там много текста)
+
+```css
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave {
+    opacity: 0;
+}
+```

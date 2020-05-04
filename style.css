@@ -1,3 +1,8 @@
-.large {
-    font-size: 50px;
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave {
+    opacity: 0;
 }

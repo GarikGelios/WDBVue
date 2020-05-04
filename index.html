@@ -13,44 +13,12 @@
 <body>
     <div id="app">
         <div class="container">
-            <task taskname="Hey! Task is here"></task>
-            <card cardtitle='I am card'></card>
-            <book v-bind:booktitle='title' :bookdescription='description' :bookauthor='author'></book>
+            <button v-on:click="show = !show" type="button" class="btn btn-primary">Click on me </button>
+            <transition name='fade'>
+                <p v-if="show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis, repellat iure in voluptas natus temporibus exercitationem praesentium minus architecto!</p>
+            </transition>
         </div>        
     </div>
-
-    <template id='card'>
-        <div class="card" style="width: 18rem;">
-            <img src="https://dummyimage.com/280x180/000/fff" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{ cardtitle }}</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </template>
-
-    <template id='books'>
-        <div class="card" style="width: 18rem;">
-            <img src="https://dummyimage.com/280x180/000/fff" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{ booktitle }}</h5>
-              <blockquote class="blockquote">
-                <p>{{ bookdescription }}</p>
-                <footer class="blockquote-footer">{{ bookauthor }} на <cite title="Интернет-магазин OZ.by">oz.by</cite></footer>
-              </blockquote>
-              <a href="#" class="btn btn-primary">Купить</a>
-            </div>
-          </div>
-    </template>
-
-
-    
-
-
-
-
-
 
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
