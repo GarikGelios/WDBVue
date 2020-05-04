@@ -1,12 +1,19 @@
 new Vue ({
     el: '#app',
     data: {
-        message: 'Hello world',
-        name: '',
-        list: '<ul><li>I`am ok!</li><li>Happy!!</li><li>Amazing!!!</li></ul>',
-        display: true,
-        mymood1: 'I`am ok!',
-        mymood2: 'Happy!!',
-        mymood3: 'Amazing!!!'
+        count: 1,
+        url: "",
+        cleanUrl: ""
+    },
+    methods: {
+        countUp: function () {
+            this.count += 1;
+        },
+        countDown: function () {
+            this.count -= 1;
+        },
+        urlCleaner: function () {
+            this.cleanUrl = this.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+        }
     }
 })

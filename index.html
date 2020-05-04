@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="app">
-        <h1 v-text="message"></h1>
-        <p>Whay is your name?</p>
-        <input type="text" v-model="name">
-        <p>Hello {{ name }}! How are you?</p>
-        <input type="checkbox" v-model="display" id="options"> <label for="options">Show options: {{ display }} </label>
-        <div v-show="display" v-html="list"></div>
-        <p v-if="display">I`am ok!</p>
-        <p v-else>Amazing!!!</p>
-        
+        <div class="container">
+            <h1>APP url:<a v-bind:href="url">{{ cleanUrl }}</a></h1>
+            <input type="text" class="form-control" v-model="url">
+            <button @click="urlCleaner" class="btn btn-primary">Clean URL</button>
+
+
+            <h2>{{ count }}</h2>
+            <button v-on:click="countUp" class="btn btn-success">+1</button>
+            <button @click="countDown" class="btn btn-success">-1</button>
+        </div>
     </div>
-    
+
 
 
 
