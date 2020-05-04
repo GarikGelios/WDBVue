@@ -13,20 +13,39 @@
 <body>
     <div id="app">
         <div class="container">
-            <h1>{{ title }}</h1>
-            <button v-bind:class="[sizeToggle ? 'large' : '', {'rounded' :  isRounded}]"
-                    v-bind:style="styles"
-                    v-bind:disabled="disabled"> Start </button>
-                    <ul>
-                        <li><input type="checkbox" v-model="sizeToggle"><label for="">Увеличить шрифт</label></li>
-                        <li><input type="checkbox" v-model="isRounded"><label for="">Округлить</label></li>
-                        <li><input type="checkbox" v-model="disabled"><label for="">Disabled</label></li>
-
-                        <li><input type="text" v-model="fontColor"></li>
-                        <li><input type="text" v-model="backgroundColor"></li>
-                    </ul>
-        </div>
+            <task taskname="Hey! Task is here"></task>
+            <card cardtitle='I am card'></card>
+            <book v-bind:booktitle='title' :bookdescription='description' :bookauthor='author'></book>
+        </div>        
     </div>
+
+    <template id='card'>
+        <div class="card" style="width: 18rem;">
+            <img src="https://dummyimage.com/280x180/000/fff" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ cardtitle }}</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </template>
+
+    <template id='books'>
+        <div class="card" style="width: 18rem;">
+            <img src="https://dummyimage.com/280x180/000/fff" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ booktitle }}</h5>
+              <blockquote class="blockquote">
+                <p>{{ bookdescription }}</p>
+                <footer class="blockquote-footer">{{ bookauthor }} на <cite title="Интернет-магазин OZ.by">oz.by</cite></footer>
+              </blockquote>
+              <a href="#" class="btn btn-primary">Купить</a>
+            </div>
+          </div>
+    </template>
+
+
+    
 
 
 
