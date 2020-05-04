@@ -13,14 +13,18 @@
 <body>
     <div id="app">
         <div class="container">
-            <h1>APP url:<a v-bind:href="url">{{ cleanUrl }}</a></h1>
-            <input type="text" class="form-control" v-model="url">
-            <button @click="urlCleaner" class="btn btn-primary">Clean URL</button>
+            <h1>{{ title }}</h1>
+            <button v-bind:class="[sizeToggle ? 'large' : '', {'rounded' :  isRounded}]"
+                    v-bind:style="styles"
+                    v-bind:disabled="disabled"> Start </button>
+                    <ul>
+                        <li><input type="checkbox" v-model="sizeToggle"><label for="">Увеличить шрифт</label></li>
+                        <li><input type="checkbox" v-model="isRounded"><label for="">Округлить</label></li>
+                        <li><input type="checkbox" v-model="disabled"><label for="">Disabled</label></li>
 
-
-            <h2>{{ count }}</h2>
-            <button v-on:click="countUp" class="btn btn-success">+1</button>
-            <button @click="countDown" class="btn btn-success">-1</button>
+                        <li><input type="text" v-model="fontColor"></li>
+                        <li><input type="text" v-model="backgroundColor"></li>
+                    </ul>
         </div>
     </div>
 

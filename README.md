@@ -18,3 +18,19 @@ Vue js уроки https://www.youtube.com/playlist?list=PLVfMKQXDAhGWFP61AzOs_Po
 - ``v-model="url"`` значение в инпуте передаёт в эту переменную (текст, числов, булевое)
 - ``v-bind:href="url"`` подставляет переменную в атрибут элемента 
 
+## Lesson 3
+
+- ``v-bind:class="[sizeToggle ? 'large' : '', {'rounded' :  isRounded}]"`` подстановке классов в зависимости от булевого состояния переменных
+- ``v-bind:disabled="disabled"`` то же смое
+- ``v-bind:style="styles"`` подстановке стилей из одной переменной собранной из инпутов в помощью *v-model*
+
+```js
+computed: {
+        styles: function() {
+            return {
+                color: this.fontColor,
+                background: this.backgroundColor
+            }
+        }
+    },
+```
