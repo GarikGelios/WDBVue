@@ -71,3 +71,10 @@ props: ['taskname'],
     opacity: 0;
 }
 ```
+
+## Lesson 7 — Маршрутизация
+
+- подключается отдельно ``<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>``
+- ссылки оборачиваются тэгом ``<router-link to="/foo">Перейти к Foo</router-link>``
+- место отображаемого контента обозначается тэгом ``<router-view></router-view>``
+- в js файле шаблон надо привязать к переменной и потом указать его маршрут (см. [документацю](https://router.vuejs.org/ru/guide/#javascript) там много текста)
