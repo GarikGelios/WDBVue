@@ -13,12 +13,29 @@
 <body>
     <div id="app">
         <div class="container">
-            <nav>
-                <router-link to="/foo">Перейти к Foo</router-link>
-                <router-link to="/bar">Перейти к Bar</router-link>
-            </nav>
-            <router-view></router-view>
-        </div>        
+            <h1>{{ headingtext }}</h1>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="add new task" aria-label="Add new task"
+                    aria-describedby="button-add" v-model="tasksinput">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="buttonAdd" v-on:click="addTask">+ Add</button>
+                </div>
+            </div>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tasks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(task, index) in tasklist">
+                    <th scope="row">{{ task.number }}</th>
+                    <td class="d-flex justify-content-between"> {{ task.text }} <button type="button" class="btn btn-danger btn-sm" aria-label="Delete" v-on:click="deleteTask(index)">x</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
     </div>
 
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
